@@ -16,6 +16,7 @@ export class AgeCalculator {
   }
 
   getMSPerEarthYear() {
+    //estimate based on 365.25 days/year
     const msPerEarthYear = 31557600000;
     return msPerEarthYear;
   }
@@ -50,5 +51,11 @@ export class AgeCalculator {
       return roundToHalf(yearsPastExpectancy);
     }
   }
+}
 
+AgeCalculator.presets = {
+  mercury: .24,
+  venus: .62,
+  mars: 1.88,
+  jupiter: 11.86
 }
