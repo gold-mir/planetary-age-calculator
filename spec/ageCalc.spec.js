@@ -19,6 +19,6 @@ describe('Age Calculator', () => {
   });
 
   it("should have a getYearsFrom method that returns the number of years from an inputted date to the calculator's date in modified years", () => {
-    expect(planetx.getYearsFrom('2018-01-01')).toEqual(2);
+    expect(planetx.getYearsFrom(new Date('2018-01-01'))).toEqual(2);
   });
 });
