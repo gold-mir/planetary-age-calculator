@@ -23,6 +23,11 @@ describe('Age Calculator', () => {
   });
 
   it("should have a getLifeExpectancy method that returns the expected number of years they have left to live in that planet's years, based on an inputted birthday, assuming 80 years expected lifespan", () => {
+    /*
+    Expected result:
+    80 earth year life expectancy - 79 years lived = 1 earth year life expectancy left
+
+    */
     expect(planetx.getLifeExpectancy(new Date('1940-01-01'))).toEqual(2);
   });
 });

@@ -18,8 +18,12 @@ export class AgeCalculator {
     return msPerEarthYear;
   }
 
+  getMSPerYear() {
+    const msPerYear = this.getMSPerEarthYear() * this.getYearLength();
+    return msPerYear;
+  }
+
   getYearsFrom(date){
-    //Estimated approx 31557600000 based on 31536000000 ms in 365 days + 21600000ms (0.25 days) to account for leap years
     const msPerEarthYear = this.getMSPerEarthYear();
     /*
     To do this:
@@ -38,6 +42,20 @@ export class AgeCalculator {
     let elapsedYearsPlanetary = elapsedYearsEarth / this.getYearLength();
 
     return elapsedYearsPlanetary;
+  }
+
+  getLifeExpectancy(date){
+    const humanLifeExpectancy = 80 / this.getYearLength();
+    const age = this.getYearsFrom(date);
+
+    let yearsLeft = humanLifeExpectancy - age;
+
+    if(yearsLeft > 0){
+      return yearsLeft;
+    } else {
+      let yearsPastExpectancy = yearsLeft * -1;
+      return yearsPastExpectancy;
+    }
   }
 
 }
