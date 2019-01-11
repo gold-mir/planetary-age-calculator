@@ -16,7 +16,6 @@ export class AgeCalculator {
   }
 
   getMSPerEarthYear() {
-    // const msPerEarthYear = 31536000000;
     const msPerEarthYear = 31557600000;
     return msPerEarthYear;
   }
@@ -27,17 +26,6 @@ export class AgeCalculator {
   }
 
   getYearsFrom(date){
-    // const msPerEarthYear = this.getMSPerEarthYear();
-    //
-    // let given = date.getTime();
-    // let current = this.getDate();
-    //
-    // let elapsedMS = current - given;
-    // let elapsedYearsEarth = elapsedMS / msPerEarthYear;
-    // let elapsedYearsPlanetary = elapsedYearsEarth / this.getYearLength();
-    //
-    // return elapsedYearsPlanetary;
-
     const msPerYear = this.getMSPerYear();
     let given = date.getTime();
     let current = this.getDate();
