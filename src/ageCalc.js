@@ -15,8 +15,7 @@ export class AgeCalculator {
 
   getYearsFrom(date){
     //Estimated approx 31557600000 based on 31536000000 ms in 365 days + 21600000ms (0.25 days) to account for leap years
-    const msPerEarthYear = 31557600000;
-    console.log(`starting from date ${date}`);
+    const msPerEarthYear = 31536000000;
     /*
     To do this:
     1. Get ms of given date.
@@ -32,7 +31,6 @@ export class AgeCalculator {
     let elapsedMS = current - given;
     let elapsedYearsEarth = elapsedMS / msPerEarthYear;
     let elapsedYearsPlanetary = elapsedYearsEarth / this.getYearLength();
-    console.log(`current time: ${current} given time: ${given} elapsed years (earth): ${elapsedYearsEarth}`);
 
     return elapsedYearsPlanetary;
   }
