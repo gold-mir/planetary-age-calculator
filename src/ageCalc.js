@@ -1,3 +1,5 @@
+import { roundToHalf } from './rounding.js'
+
 export class AgeCalculator {
   //creates a new AgeCalculator with a specified year length in earth years
   constructor(yearLength, date = new Date()){
@@ -44,7 +46,7 @@ export class AgeCalculator {
 
     let elapsedYears = elapsedMS / msPerYear;
 
-    return elapsedYears;
+    return roundToHalf(elapsedYears);
   }
 
   getLifeExpectancy(date){
@@ -54,10 +56,10 @@ export class AgeCalculator {
     let yearsLeft = humanLifeExpectancy - age;
 
     if(yearsLeft > 0){
-      return yearsLeft;
+      return roundToHalf(yearsLeft);
     } else {
       let yearsPastExpectancy = yearsLeft * -1;
-      return yearsPastExpectancy;
+      return roundToHalf(yearsPastExpectancy);
     }
   }
 
