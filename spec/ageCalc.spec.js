@@ -33,12 +33,14 @@ describe('Age Calculator', () => {
 
   it("should have a getPreset method that returns an AgeCalculator with a specified preset", () => {
     let mars = AgeCalculator.getPreset("mars");
+    console.log(mars);
     expect(mars.getYearLength()).toEqual(1.88);
   });
 
   it("should let you input a date into getPreset along with a preset and get an AgeCalculator with that preset and time", () => {
+    let mars = AgeCalculator.getPreset("mars");
     let marsOnNY = AgeCalculator.getPreset("mars", newYears);
-    expect(mars.getDate()).toEqual(newYears.getTime());
+    expect(marsOnNY.getDate()).toEqual(newYears.getTime());
   });
 
 });

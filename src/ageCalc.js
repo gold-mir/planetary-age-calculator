@@ -59,3 +59,8 @@ AgeCalculator.presets = {
   mars: 1.88,
   jupiter: 11.86
 }
+
+AgeCalculator.getPreset = function(planetName, date = new Date()){
+  let yearLength = AgeCalculator.presets[planetName.toLowerCase()];
+  return new AgeCalculator(yearLength, date);
+}
